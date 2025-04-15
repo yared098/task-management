@@ -28,7 +28,10 @@ class TaskRepositoryImpl implements TaskRepository {
   Future<void> updateTask(int index, Task task) async {
     var box = await Hive.openBox<Task>(_taskBox);
     if (index >= 0 && index < box.length) {
-      await box.putAt(index, task);
+      await box.putAt(
+        index,
+        task,
+      ); // Ensure this line is being executed properly
     }
   }
 

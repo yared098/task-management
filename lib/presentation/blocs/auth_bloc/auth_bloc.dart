@@ -14,5 +14,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       await HiveConfig.clearUserSession();
       emit(AuthUnauthenticated());
     });
+  
   }
 }
